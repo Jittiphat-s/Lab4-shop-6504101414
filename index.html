@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=eage">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ร้านของเเมว</title>
+
+    <link rel="stylesheet" href="index.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+<body>
+    
+    <nav>
+        <div class="nav-container">
+            <div class="profile-Pr">
+                <a href="index.html">
+                    <img src="./imgs/logo-a.png" class="logonav">
+                </a>
+                
+                <p class="prsweetie-name">ร้านของแมว -Pr sweetie house
+                </p>
+
+            </div>  
+
+            <div class="nav-profile">
+                <p>ตระกร้าสินค้า</p>
+                <div onclick="openCart()" style="cursor: pointer;" class="nav-profile-cart">
+                    <i class="fas fa-cart-plus"></i>
+                    <div id="cartcount" class="cartcount" style="display: none;">
+                        0
+                    </div>
+                
+                </div>
+
+            </div>
+        </div> 
+
+    </nav>
+
+
+    <div class="container">
+        <div class="sidebar">
+            <input onkeyup="searchacb(this)" id="text_search" type="text" class="sidebar-search" placeholder="ค้นหาสินค้า...">
+
+            <a onclick="searchproduct('สินค้าทั้งหมด')" class="sidebar-items">
+                สินค้าทั้งหมด
+            </a>
+
+            <a onclick="searchproduct('ยารักษา')" class="sidebar-items">
+                ยารักษา
+            </a>
+
+            <a onclick="searchproduct('อุปกรณ์')" class="sidebar-items">
+                อุปกรณ์
+            </a>
+        </div>
+        <div id="productlist" class="product">
+            
+        </div>
+
+    </div>
+
+    <div id="modaldesc" class="modal" style="display: none;">
+        <div onclick="closeModal()" class="modal-bg"></div>
+
+        <div class="modal-page">
+            <h2>รายละเอียดสินค้า</h2><br>
+            <div class="modal-con">
+                <img id="mdd-img" class="modal-img"
+                 src="./imgs/abc.jpg" alt="">
+                <div class="modal-detail">
+                    <p id="mdd-name" style="font-size: 1.5vw;">SKIN THERAPY LOTION</p>
+
+                    <p id="mdd-price" style="font-size: 1.2vw">149฿</p><br>
+
+                    <p id="mdd-desc" style="color: #807e7e;"> โลชั่นรักษาโรคผิวหนังอย่างตรงจุด (สูตรสัตวแพทย์) ตัวนี้การันตีแผลหายไวมาก 🛁
+                    เหมาะกับใคร?🐱🐶🐰
+                    ใช้ได้ทั้งแมว,สุนัข และกระต่ายหรือสัตว์เลี้ยงพันธุ์เล็กก็ใช้ได้ค่ะ 
+                    แม่แมวใช้แล้วคอนเฟริมทุกบ้านว่าดีจริงๆ ขนน้องขึ้นไวขึ้นมาก ⭐️⭐️⭐️⭐️⭐️
+                    น้องแมวสามารถเลียได้อีกด้วย ส่งรูปและเล่าอาการปรึกษากันก่อนซื้อได้เลยแอดมินตอบกลับภายใน24 ชม. </p>
+                    <br>
+
+                    <div class="btn-control">
+                        <button onclick="addtocart()" class="btn btn-buy">    add to cart
+                        </button>
+
+                        <button onclick="closeModal()" class="btn btn-close">  close
+                        </button>
+
+
+                    </div>
+                </div>
+    
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="modalCart" class="modal" style="display: none;">
+        <div onclick="closeModal()" class="modal-bg"></div>
+
+        <div class="modal-page">
+            <h2>ตระกร้าสินค้า</h2><br>
+            <div id="mycart" class="cart">
+
+        </div>
+        <div class="btn-control">
+            <button onclick="buynow()" class="btn btn-buy">
+                Buy
+            </button>
+
+            <button onclick="closeModal()" class="btn btn-close">
+                Close
+            </button>
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
